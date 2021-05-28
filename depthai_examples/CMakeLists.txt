@@ -146,6 +146,7 @@ dai_add_node(rgb_stereo_node src/rgb_stereo_node.cpp)
 dai_add_node(stereo_mimic_node src/stereo_mimic_node.cpp)
 dai_add_node(rgb_subscriber_node src/rgb_video_subscriber.cpp)
 dai_add_node(yolov4_spatial_node src/yolov4_spatial_publisher.cpp)
+dai_add_node(rgb_depth_aligned src/rgb_aligned_depth_publisher.cpp)
 
  
 
