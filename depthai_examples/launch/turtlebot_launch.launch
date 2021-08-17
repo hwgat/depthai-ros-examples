@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- <args for urdf/> -->
+
+
+    <!-- <param name="oak_description"
+               command="$(find xacro)/xacro '$(find depthai_examples)/urdf/turtlebot3_waffle_pi.urdf'"/> -->
+
+    <param name="oak_description"
+               command="$(find xacro)/xacro '/opt/ros/noetic/share/turtlebot3_description/urdf/turtlebot3_waffle_pi.urdf.xacro'"/>
+
+
+    <node name="oak_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" required="true">
+    <remap from="robot_description" to="oak_description" /></node>     
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find depthai_examples)/rviz/turtleBot.rviz" />
+
+</launch>
