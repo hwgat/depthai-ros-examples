@@ -25,19 +25,30 @@ int main(int argc, char** argv){
     
     std::string deviceName;
     std::string camera_param_uri;
+    std::string camera_mxid;
     std::string nnPath(BLOB_PATH); // Set your path for the model here
     int bad_params = 0;
 
     bad_params += !pnh.getParam("camera_name", deviceName);
     bad_params += !pnh.getParam("camera_param_uri", camera_param_uri);
+    bad_params += !pnh.getParam("camera_mxid", camera_mxid);
 
     if (bad_params > 0)
     {
         throw std::runtime_error("Couldn't find one of the parameters");
     }
 
+    // current! std::string mxID = "14442C1081E063D700";
+    //std::string mxID = "14442C10314CE1D200";
+
     YoloSpatialDetectionExample detectionPipeline;
-    detectionPipeline.initDepthaiDev(nnPath);
+    if (camera_mxid == "None") {
+        detectionPipeline.initDepthaiDev(nnPath);
+    } 
+    else {
+        detectionPipeline.initDepthaiDev(nnPath,camera_mxid);
+    }
+    
     std::vector<std::shared_ptr<dai::DataOutputQueue>> imageDataQueues = detectionPipeline.getExposedImageStreams();
     std::vector<std::shared_ptr<dai::DataOutputQueue>> nNetDataQueues = detectionPipeline.getExposedNnetStreams();
 

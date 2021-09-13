@@ -13,6 +13,7 @@ class YoloSpatialDetectionExample{
     ~YoloSpatialDetectionExample() = default;
 
     void initDepthaiDev(std::string nnPath);
+    void initDepthaiDev(std::string nnPath, std::string mxID);
 
     std::vector<std::shared_ptr<dai::DataOutputQueue>> getExposedImageStreams();
     std::vector<std::shared_ptr<dai::DataOutputQueue>> getExposedNnetStreams();
@@ -22,6 +23,8 @@ class YoloSpatialDetectionExample{
     std::vector<std::shared_ptr<dai::DataOutputQueue>> _opNNetStreams;
 
     std::unique_ptr<dai::Device> _dev;
+    dai::DeviceInfo _dev_info;
+
     dai::Pipeline _p;
 
 };
