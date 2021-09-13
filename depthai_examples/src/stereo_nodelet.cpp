@@ -165,7 +165,7 @@ namespace depthai_examples{
 
         // StereoDepth
         // stereo->initialConfig.setConfidenceThreshold(200);
-        stereo->initialConfig.setLeftRightCheckThreshold(1);
+        // stereo->initialConfig.setLeftRightCheckThreshold(1);
         stereo->setRectifyEdgeFillColor(0); // black, to better see the cutout
 
         stereo->setLeftRightCheck(lrcheck);
