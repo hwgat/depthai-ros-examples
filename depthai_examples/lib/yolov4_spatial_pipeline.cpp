@@ -54,7 +54,7 @@ void YoloSpatialDetectionExample::initDepthaiDev(std::string nnPath){
     spatialDetectionNetwork->input.setBlocking(false);
     spatialDetectionNetwork->setBoundingBoxScaleFactor(0.5);
     spatialDetectionNetwork->setDepthLowerThreshold(100);
-    spatialDetectionNetwork->setDepthUpperThreshold(5000);
+    spatialDetectionNetwork->setDepthUpperThreshold(25000);
 
     // yolo specific parameters
     spatialDetectionNetwork->setNumClasses(80);
@@ -126,7 +126,7 @@ void YoloSpatialDetectionExample::initDepthaiDev(std::string nnPath, std::string
     spatialDetectionNetwork->input.setBlocking(false);
     spatialDetectionNetwork->setBoundingBoxScaleFactor(0.5);
     spatialDetectionNetwork->setDepthLowerThreshold(100);
-    spatialDetectionNetwork->setDepthUpperThreshold(5000);
+    spatialDetectionNetwork->setDepthUpperThreshold(25000);
 
     // yolo specific parameters
     spatialDetectionNetwork->setNumClasses(80);
